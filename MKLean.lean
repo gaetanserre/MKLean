@@ -3,7 +3,6 @@
 -/
 
 namespace List
-
 def iter {α : Type u} (l : List α) (f : α → IO Unit) : IO Unit :=
   let rec aux (l : List α) : IO Unit := do
     match l with
