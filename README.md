@@ -12,5 +12,5 @@ make install (optional)
 
 Run:
 ```bash
-mklean <project_name>
+mklean <project_name> [math?]
 ```

@@ -1,13 +1,10 @@
-CC = g++
-CFLAGS = -std=c++20
-SRC = src
-EXE = mklean
+EXE = .lake/build/bin/mklean
 
 all:
-	$(CC) $(SRC)/main.cc $(CFLAGS) -o $(EXE)
+	lake build
 
 install:
 	cp $(EXE) /usr/local/bin
 
 clean:
-	rm -rf $(EXE)
+	rm -rf .lake
