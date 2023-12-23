@@ -14,3 +14,6 @@ Run:
 ```bash
 mklean <project_name> [math?]
 ```
+
+### TODO
+- [ ] Update current project
