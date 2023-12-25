@@ -12,6 +12,9 @@ def need_mathlib : IO Bool :=
       pure ""
   aux >>= (λ a ↦ pure (a != ""))
 
-def update : IO Bool :=
-  let s := need_mathlib
-  s
+def update : IO Unit := do
+  exe_cmd "rm" #["-rf", ".lake", "lake-manifest.json"]
+  exe_cmd "lake" #["clean"]
+  exe_cmd "lake" #["update"]
+  need_mathlib >>= (if . then
+    exe_cmd "lake" #["exe", "cache", "get"] else pure ())

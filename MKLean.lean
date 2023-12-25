@@ -14,7 +14,7 @@ def main (argv : List String) : IO Unit :=
     IO.println s!"Error: no project directory specified.\n{usage}."
   else
     match argv with
-    | #["update"] => update >>= IO.println
+    | #["update"] => update
     | #[n] => make_lean_project n false
     | #[n, "math"]
     | #[n, "m"] => make_lean_project n true
