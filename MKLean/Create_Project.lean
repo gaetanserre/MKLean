@@ -18,6 +18,7 @@ def lake_call (args_cwd : Array String × Option String) : IO Unit := do
   sys_call "lake" args cwd >>= IO.print
 
 def make_lean_project (project_dir : String) (need_mathlib : Bool) : IO Unit :=
+
   let args_cwd := [
     (#["+leanprover/lean4:v4.4.0-rc1", "new", project_dir] ++ if need_mathlib then #["math"] else #[], none),
     (#["update"], some project_dir)
