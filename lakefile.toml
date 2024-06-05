@@ -1,0 +1,9 @@
+name = "mklean"
+defaultTargets = ["mklean"]
+
+[[lean_lib]]
+name = "MKLean"
+
+[[lean_exe]]
+name = "mklean"
+root = "MKLean"
